@@ -51,7 +51,9 @@ h2.section-title { font-size: var(--fs-h2); }
   color: var(--fresh);
   margin-bottom: 0.9rem;
 }
-.eyebrow::before { content: '✓'; display: inline-flex; width: 1.2rem; height: 1.2rem; align-items: center; justify-content: center; background: var(--fresh); color: #fff; border-radius: 4px; font-size: 0.7rem; }
+/* Checkmark dropped from the eyebrow (2026-07-30) — the motif was overused across
+   eyebrows, hero ticks, the services checklist, and the rail all at once. Keeping
+   it concentrated in the services checklist + rail, where it's actually load-bearing. */
 
 .btn {
   display: inline-flex; align-items: center; gap: 0.5rem;
@@ -123,7 +125,8 @@ h2.section-title { font-size: var(--fs-h2); }
 .hero__dek { max-width: 46ch; margin: 1.4rem auto 2rem; font-size: 1.12rem; }
 .hero__actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
 .hero__ticks { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.4rem; margin-top: 2.2rem; font-size: 0.9rem; font-weight: 700; color: var(--navy); }
-.hero__ticks span::before { content: '✓ '; color: var(--fresh); }
+.hero__ticks span { padding-left: 0.9rem; border-left: 2px solid var(--fresh); }
+.hero__ticks span:first-child { padding-left: 0; border-left: none; }
 
 /* ---------- Section shell ---------- */
 .section { padding: 5rem 0; }
