@@ -1,0 +1,195 @@
+:root {
+  --navy: #16242C;
+  --suds: #F2F5F4;
+  --ink: #101B21;
+  --fresh: #6FA85A;
+  --coral: #E8674A;
+  --mist: #8FA0A6;
+
+  --font-display: 'Baloo 2', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --fs-h2: clamp(1.9rem, 4vw, 3rem);
+  --radius: 10px;
+  --wrap: 1180px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--suds);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.03rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { margin: 0; padding: 0; list-style: none; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 2rem; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.08;
+  margin: 0;
+  color: var(--navy);
+}
+h2.section-title { font-size: var(--fs-h2); }
+.section--dark h2.section-title, .section--dark h1 { color: var(--suds); }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fresh);
+  margin-bottom: 0.9rem;
+}
+.eyebrow::before { content: '✓'; display: inline-flex; width: 1.2rem; height: 1.2rem; align-items: center; justify-content: center; background: var(--fresh); color: #fff; border-radius: 4px; font-size: 0.7rem; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.9rem 1.8rem; border-radius: 999px;
+  font-family: var(--font-body); font-weight: 700; font-size: 0.95rem;
+  border: 2px solid transparent; cursor: pointer;
+  transition: transform .15s ease, background .15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn--primary { background: var(--coral); color: #fff; }
+.btn--primary:hover { background: #d1583d; }
+.btn--ghost { border-color: var(--navy); color: var(--navy); }
+.btn--ghost:hover { border-color: var(--fresh); color: var(--fresh); }
+.btn--dark-ghost { border-color: var(--suds); color: var(--suds); }
+
+/* ---------- Checklist Rail — signature element ----------
+   Replaces the story-pole. A fixed left-edge rail of checkbox
+   icons, one per section — each fills in with a check mark the
+   moment you scroll past that section, literally checking the
+   page off like the recurring-service checklist this brand sells. */
+.checklist-rail {
+  position: fixed; left: 14px; top: 50%; transform: translateY(-50%);
+  z-index: 60; display: none; flex-direction: column; gap: 0.65rem;
+}
+@media (min-width: 1080px) { .checklist-rail { display: flex; } }
+.checklist-rail__item {
+  width: 18px; height: 18px; border-radius: 5px;
+  border: 2px solid var(--mist); background: transparent;
+  transition: background .25s ease, border-color .25s ease;
+  position: relative;
+}
+.checklist-rail__item.done { background: var(--fresh); border-color: var(--fresh); }
+.checklist-rail__item.done::after {
+  content: ''; position: absolute; left: 4px; top: 1px; width: 5px; height: 9px;
+  border-right: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(40deg);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  padding: 1.1rem 0; transition: background .2s ease, padding .2s ease, box-shadow .2s ease;
+}
+.site-header .wrap { display: flex; align-items: center; gap: 1.5rem; }
+.site-header.solid { background: var(--suds); padding: 0.7rem 0; box-shadow: 0 2px 16px rgba(16,27,33,0.08); }
+.logo { font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; margin-right: auto; color: var(--navy); }
+.logo span { color: var(--fresh); }
+.preview-flag {
+  font-size: 0.78rem; font-weight: 700; padding: 0.4rem 0.85rem; border-radius: 999px;
+  border: 1px solid var(--mist); color: var(--mist); white-space: nowrap;
+}
+.preview-flag:hover { border-color: var(--coral); color: var(--coral); }
+.main-nav { display: none; gap: 1.8rem; font-weight: 600; font-size: 0.92rem; }
+.main-nav a:hover { color: var(--fresh); }
+@media (min-width: 900px) { .main-nav { display: flex; } }
+.nav-toggle { background: none; border: 2px solid var(--navy); border-radius: 999px; padding: 0.5rem 0.9rem; font-weight: 700; font-size: 0.85rem; cursor: pointer; }
+@media (min-width: 900px) { .nav-toggle { display: none; } }
+.mobile-nav {
+  position: fixed; inset: 0; z-index: 70; background: var(--navy); color: var(--suds);
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+  gap: 1.6rem; padding: 2rem 2.5rem; transform: translateX(100%); transition: transform .3s ease;
+}
+.mobile-nav.open { transform: translateX(0); }
+.mobile-nav a { font-family: var(--font-display); font-size: 1.9rem; }
+.mobile-nav__close { position: absolute; top: 1.5rem; right: 1.8rem; background: none; border: none; color: var(--suds); font-weight: 700; cursor: pointer; }
+
+/* ---------- Hero — typography + icon led, no photo (mediocre stock only) ---------- */
+.hero { padding: 9.5rem 0 5rem; text-align: center; }
+.hero h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); max-width: 16ch; margin: 0 auto; }
+.hero__dek { max-width: 46ch; margin: 1.4rem auto 2rem; font-size: 1.12rem; }
+.hero__actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+.hero__ticks { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.4rem; margin-top: 2.2rem; font-size: 0.9rem; font-weight: 700; color: var(--navy); }
+.hero__ticks span::before { content: '✓ '; color: var(--fresh); }
+
+/* ---------- Section shell ---------- */
+.section { padding: 5rem 0; }
+.section--dark { background: var(--navy); color: var(--suds); }
+.section--white { background: #fff; }
+.section-head { max-width: 60ch; margin: 0 auto 3rem; text-align: center; }
+.section-dek { margin-top: 1rem; opacity: 0.85; }
+
+/* ---------- How it works (lead section) ---------- */
+.works-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+@media (min-width: 780px) { .works-grid { grid-template-columns: repeat(3, 1fr); } }
+.works-step { background: #fff; border-radius: var(--radius); padding: 2.2rem 1.8rem; box-shadow: 0 8px 24px rgba(16,27,33,0.06); text-align: center; }
+.works-step .num { display: inline-flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.6rem; border-radius: 50%; background: var(--fresh); color: #fff; font-family: var(--font-display); font-weight: 800; margin-bottom: 1rem; }
+.works-step h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
+
+/* ---------- Services checklist ---------- */
+.checklist { max-width: 760px; margin: 0 auto; display: grid; gap: 0.9rem; }
+.checklist-row {
+  display: flex; align-items: flex-start; gap: 1rem;
+  background: #fff; border-radius: var(--radius); padding: 1.3rem 1.5rem;
+  box-shadow: 0 4px 14px rgba(16,27,33,0.05);
+}
+.checklist-row .check { flex-shrink: 0; width: 26px; height: 26px; border-radius: 7px; background: var(--fresh); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; margin-top: 0.1rem; }
+.checklist-row div h3 { font-size: 1.05rem; margin-bottom: 0.25rem; }
+.checklist-row div p { margin: 0; color: var(--mist); font-size: 0.92rem; }
+.checklist-row a { margin-left: auto; align-self: center; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--coral); white-space: nowrap; }
+
+/* ---------- Reviews ---------- */
+.reviews-strip { max-width: 640px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.2rem; text-align: center; }
+.reviews-stars { font-family: var(--font-display); font-size: 2.2rem; color: var(--fresh); width: 100%; }
+
+/* ---------- About ---------- */
+.about-layout { display: grid; gap: 2.5rem; grid-template-columns: 1fr; align-items: center; }
+@media (min-width: 900px) { .about-layout { grid-template-columns: 1fr 1fr; } }
+.about-media img { border-radius: var(--radius); }
+.about-copy p { max-width: 52ch; }
+
+/* ---------- Area ---------- */
+.area-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem; margin-top: 1.4rem; }
+.area-list li { padding: 0.5rem 1rem; border: 1px solid rgba(242,245,244,0.35); border-radius: 999px; font-weight: 600; font-size: 0.9rem; }
+
+/* ---------- Contact ---------- */
+.contact-form { max-width: 560px; margin: 0 auto; display: grid; gap: 1.1rem; }
+.form-row { display: grid; gap: 1.1rem; grid-template-columns: 1fr; }
+@media (min-width: 560px) { .form-row { grid-template-columns: 1fr 1fr; } }
+.field label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.4rem; }
+.field input, .field select, .field textarea {
+  width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1.5px solid rgba(16,27,33,0.15);
+  background: #fff; color: var(--ink); font-family: var(--font-body); font-size: 0.95rem;
+}
+.field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--fresh); }
+.form-status { min-height: 1.2rem; font-size: 0.9rem; color: var(--fresh); text-align: center; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--ink); color: var(--suds); padding: 2.4rem 0; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.2rem; }
+.footer-fine { width: 100%; font-size: 0.8rem; opacity: 0.6; margin-top: 1rem; }
+.footer-links { display: flex; gap: 1.4rem; font-size: 0.85rem; }
+
+/* ---------- Buy-this-site page ---------- */
+.pitch-hero { padding: 9rem 0 4rem; text-align: center; }
+.pitch-hero p { max-width: 56ch; margin: 1.3rem auto 0; font-size: 1.1rem; }
+.pitch-grid { display: grid; gap: 1.4rem; grid-template-columns: 1fr; margin-top: 1rem; }
+@media (min-width: 780px) { .pitch-grid { grid-template-columns: repeat(3, 1fr); } }
+.pitch-card { background: #fff; border-radius: var(--radius); padding: 2rem 1.6rem; box-shadow: 0 8px 20px rgba(16,27,33,0.06); }
+.pitch-card h3 { font-size: 1.1rem; margin-bottom: 0.6rem; }
+.price-block { max-width: 560px; margin: 1rem auto 0; padding: 2.2rem; border: 2px dashed var(--mist); border-radius: var(--radius); text-align: center; }
+.price-block b { display: block; font-family: var(--font-display); font-size: 1.5rem; }
+.price-block span { display: block; margin-top: 0.5rem; font-size: 0.9rem; color: var(--mist); }
