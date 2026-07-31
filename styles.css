@@ -38,7 +38,7 @@ h1, h2, h3 {
   color: var(--navy);
 }
 h2.section-title { font-size: var(--fs-h2); }
-.section--dark h2.section-title, .section--dark h1 { color: var(--suds); }
+.section--dark h2.section-title, .section--dark h1, .section--dark h3 { color: var(--suds); }
 
 .eyebrow {
   display: inline-flex;
