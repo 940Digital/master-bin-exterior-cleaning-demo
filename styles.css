@@ -98,7 +98,8 @@ h2.section-title { font-size: var(--fs-h2); }
 }
 .site-header .wrap { display: flex; align-items: center; gap: 1.5rem; }
 .site-header.solid { background: var(--suds); padding: 0.7rem 0; box-shadow: 0 2px 16px rgba(16,27,33,0.08); }
-.logo { font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; margin-right: auto; color: var(--navy); }
+.logo { font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; margin-right: auto; color: var(--navy); display: inline-flex; align-items: center; gap: 0.5rem; }
+.logo-mark { height: 34px; width: 34px; border-radius: 50%; object-fit: cover; }
 .logo span { color: var(--fresh); }
 .preview-flag {
   font-size: 0.78rem; font-weight: 700; padding: 0.4rem 0.85rem; border-radius: 999px;
