@@ -223,5 +223,10 @@ h2.section-title { font-size: var(--fs-h2); }
 .pricing-card__list li { display: flex; gap: 0.6rem; align-items: baseline; font-size: 0.92rem; font-weight: 700; color: var(--ink); }
 .pricing-card__list li::before { content: '✓'; color: var(--fresh); font-weight: 800; }
 .pricing-card .btn { justify-content: center; width: 100%; }
+/* Cards here are solid white (unlike other builds' bordered-transparent
+   cards on the dark section), so the light-on-dark .btn--dark-ghost is
+   invisible — recolor to navy for this white card background. */
+.pricing-card .btn--dark-ghost { border-color: var(--navy); color: var(--navy); }
+.pricing-card .btn--dark-ghost:hover { border-color: var(--fresh); color: var(--fresh); }
 .pricing-card--featured { box-shadow: 0 0 0 2px var(--fresh), 0 8px 20px rgba(16,27,33,0.06); }
 .pricing-card__badge { position: absolute; top: -0.85rem; left: 50%; transform: translateX(-50%); background: var(--fresh); color: var(--ink); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 999px; white-space: nowrap; }
