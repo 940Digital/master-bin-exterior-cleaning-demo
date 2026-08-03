@@ -166,6 +166,9 @@ h2.section-title { font-size: var(--fs-h2); }
   box-shadow: 0 4px 14px rgba(16,27,33,0.05);
 }
 .checklist-row .check { flex-shrink: 0; width: 26px; height: 26px; border-radius: 7px; background: var(--fresh); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; margin-top: 0.1rem; }
+/* Checklist cards keep a white background even inside .section--dark — override the
+   section's light heading color so h3s don't wash out to near-invisible on white. */
+.section--dark .checklist-row h3 { color: var(--navy); }
 .checklist-row div h3 { font-size: 1.05rem; margin-bottom: 0.25rem; }
 .checklist-row div p { margin: 0; color: var(--mist); font-size: 0.92rem; }
 .checklist-row a { margin-left: auto; align-self: center; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--coral); white-space: nowrap; }
@@ -198,6 +201,9 @@ h2.section-title { font-size: var(--fs-h2); }
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--ink); color: var(--suds); padding: 2.4rem 0; }
+/* The .logo text is navy by default (fine on the light header background) — the
+   footer sits on the near-black --ink, where navy nearly disappears. */
+.site-footer .logo { color: var(--suds); }
 .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.2rem; }
 .footer-fine { width: 100%; font-size: 0.8rem; opacity: 0.6; margin-top: 1rem; }
 .footer-links { display: flex; gap: 1.4rem; font-size: 0.85rem; }
