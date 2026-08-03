@@ -70,10 +70,9 @@ h2.section-title { font-size: var(--fs-h2); }
 .btn--dark-ghost { border-color: var(--suds); color: var(--suds); }
 
 /* ---------- Checklist Rail — signature element ----------
-   Replaces the story-pole. A fixed left-edge rail of checkbox
-   icons, one per section — each fills in with a check mark the
-   moment you scroll past that section, literally checking the
-   page off like the recurring-service checklist this brand sells. */
+   Replaces the story-pole. A fixed left-edge rail of squares,
+   one per section — each fills solid green the moment you scroll
+   past that section, like items being handled off a service list. */
 .checklist-rail {
   position: fixed; left: 14px; top: 50%; transform: translateY(-50%);
   z-index: 60; display: none; flex-direction: column; gap: 0.65rem;
@@ -86,10 +85,6 @@ h2.section-title { font-size: var(--fs-h2); }
   position: relative;
 }
 .checklist-rail__item.done { background: var(--fresh); border-color: var(--fresh); }
-.checklist-rail__item.done::after {
-  content: ''; position: absolute; left: 4px; top: 1px; width: 5px; height: 9px;
-  border-right: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(40deg);
-}
 
 /* ---------- Header ---------- */
 .site-header {
@@ -165,7 +160,7 @@ h2.section-title { font-size: var(--fs-h2); }
   background: #fff; border-radius: var(--radius); padding: 1.3rem 1.5rem;
   box-shadow: 0 4px 14px rgba(16,27,33,0.05);
 }
-.checklist-row .check { flex-shrink: 0; width: 26px; height: 26px; border-radius: 7px; background: var(--fresh); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; margin-top: 0.1rem; }
+.checklist-row .check { flex-shrink: 0; width: 6px; height: 44px; border-radius: 999px; background: var(--fresh); margin-top: 0.1rem; }
 /* Checklist cards keep a white background even inside .section--dark — override the
    section's light heading color so h3s don't wash out to near-invisible on white. */
 .section--dark .checklist-row h3 { color: var(--navy); }
@@ -225,7 +220,7 @@ h2.section-title { font-size: var(--fs-h2); }
 .price-block span { display: block; margin-top: 0.5rem; font-size: 0.9rem; color: var(--mist); }
 .price-block__list { list-style: none; margin: 1.2rem auto 0; padding: 0; display: inline-grid; gap: 0.55rem; text-align: left; }
 .price-block__list li { display: flex; gap: 0.6rem; align-items: baseline; font-weight: 700; font-size: 0.95rem; }
-.price-block__list li::before { content: '✓'; color: var(--fresh); font-weight: 800; }
+.price-block__list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--fresh); flex-shrink: 0; align-self: center; }
 
 /* ---------- Pricing grid (3 plans, buy.html) ---------- */
 .pricing-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; margin-top: 1.6rem; }
@@ -238,7 +233,7 @@ h2.section-title { font-size: var(--fs-h2); }
 .pricing-card__setup { display: block; margin-top: 0.3rem; font-size: 0.85rem; opacity: 0.65; color: var(--ink); }
 .pricing-card__list { list-style: none; margin: 1.5rem 0 2rem; padding: 0; display: grid; gap: 0.6rem; flex-grow: 1; }
 .pricing-card__list li { display: flex; gap: 0.6rem; align-items: baseline; font-size: 0.92rem; font-weight: 700; color: var(--ink); }
-.pricing-card__list li::before { content: '✓'; color: var(--fresh); font-weight: 800; }
+.pricing-card__list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--fresh); flex-shrink: 0; align-self: center; }
 .pricing-card .btn { justify-content: center; width: 100%; }
 /* Cards here are solid white (unlike other builds' bordered-transparent
    cards on the dark section), so the light-on-dark .btn--dark-ghost is
