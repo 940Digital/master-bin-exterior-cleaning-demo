@@ -43,7 +43,9 @@ Template Zero's Story Pole and Jurassic's Spray Line are both **wrong** for this
 
 ## 6. Images
 
-Only one supporting photo is used (a tidy home driveway, in the About section) — small and scattered, per the "mediocre/no images" tier. No hero or lead image, unlike Jurassic.
+Only one supporting photo is used (in the About section) — small and scattered, per the "mediocre/no images" tier. No hero or lead image, unlike Jurassic.
+
+**2026-08-04 update:** replaced the placeholder Unsplash driveway stock photo with a real before/after result photo Owen supplied (`before-after-bin.webp`) — a much stronger fit than generic stock, since it's an actual demonstration of the service outcome rather than an unrelated tidy-driveway shot.
 
 ## 7. Flag for Owen
 
