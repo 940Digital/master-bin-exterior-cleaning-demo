@@ -1,52 +1,124 @@
-# Design Tokens — Master Bin & Exterior Cleaning
+# Design Tokens — LONESTAR Bin Cleaners
 
-Forked from Template Zero. Full re-run of the token brainstorm — not a reskin of Template Zero's palette/type, or of Jurassic's (the other business sharing this batch).
+Forked from `master-bin-exterior-cleaning` (Template Zero lineage) at Owen's request — reuse the
+proven section skeleton, but rebuild the palette, type, and several structural decisions around
+LONESTAR's own real brand and real facts. Not a reskin: LONESTAR has assets Master Bin didn't
+(a real branded truck photo, real before/after photos, a real logo, real 3-tier pricing), which
+changes the structural calls below, not just the colors.
 
 ## 1. Identity
 
-Master Bin is a brand-new, very small recurring-service business in Denton — trash bin cleaning, with exterior cleaning as an add-on. 5.0★ across only 4 reviews. The whole pitch is convenience: get it off your mental to-do list permanently. A visitor should feel calm and relieved in the first three seconds — "oh, I never have to think about this again" — not excited or impressed. This is a low-drama, high-trust utility service, not a craft brand.
+LONESTAR Bin Cleaners — Frisco, TX (6160 Warren Parkway Suite 100, Frisco, TX 75034). Est. 2022.
+Recurring trash-bin cleaning (interior + exterior, sanitize/disinfect/deodorize, 200°F rinse)
+plus residential pressure washing as a secondary line. BBB A+ rated (not accredited). Real,
+current promo: 20% off first cleaning, code `LONESTAR20`, no long-term contract. This is a
+confident, established local operator — not a brand-new one-person outfit like Master Bin —
+so the tone can be bolder and more declarative than Master Bin's deliberately calm, minimal one.
 
-## 2. Palette concept
+## 2. Palette — pulled directly from the real logo/truck livery, not invented
 
-Rejected the literal "trash can" color cliché (browns/dark greens) — that would visually reinforce the exact grime this service removes. Instead grounded the palette in "clean and administrative" — the feeling of a freshly rinsed, sanitized surface and a service you set once and never manage again.
-
-**2026-08-04 revision:** the original build used a navy/green/coral-orange combo. Owen flagged the orange CTA as no longer appealing, and asked for a palette closer to the business's own real logo (navy + green + orange) — but a *better* execution than a flat navy-and-green, not a literal copy. Dropped orange entirely rather than trying to save it: the real logo's orange is a small icon accent, not something that needs to survive as a full site-wide CTA color. Deepened the navy into a livelier teal-navy, brightened the green so it reads "fresh" instead of muddy-olive, and introduced **Wave** — a confident teal-blue — as the new primary accent, replacing Coral one-for-one in every usage (CTA buttons, hover states, checklist links). Blue + green now do all the accent work between them, tied to the real brand's two most recognizable colors, without the orange that felt dated.
+Source: LONESTAR's actual logo (`images/logo.png`) and truck wrap (`images/truck.png`), sampled
+via computed styles on the live site (nav links, Sign Up/Login buttons). This *is* their real
+brand red/blue — Texas-flag-adjacent by coincidence of their own naming and mark, not a
+theme applied on top. Per the "don't avoid obvious industry colors reflexively" note, using the
+business's own real colors is the correct default, not a cliché to route around.
 
 | Name | Hex | Role |
 |---|---|---|
-| **Navy** | `#123C48` | Base dark surface — deeper, livelier teal-navy (was flatter charcoal-navy) |
-| **Suds** | `#F2F5F4` | Base light surface — cool, clean white |
-| **Ink** | `#101B21` | Body text on light surfaces |
-| **Fresh** | `#3DAF72` | Secondary accent — checkmarks, "done," the feeling of clean (brighter/cleaner than the original muddy green) |
-| **Wave** | `#1E88A8` | **Primary accent** — CTA buttons, links, hover states. Replaces Coral entirely. |
-| **Mist** | `#8299A1` | Muted support — borders, secondary text |
+| **Navy** | `#1E2A5E` | Base dark surface — deepened from the site's raw `rgb(40,56,145)` button blue for better contrast at scale |
+| **Paper** | `#F8F6F1` | Base light surface — warm off-white, distinct from Master Bin's cooler `#F2F5F4` |
+| **Ink** | `#171A22` | Body text on light surfaces |
+| **Star Red** | `#C31F30` | Primary accent — CTAs, the signature "star" motif, deals callout. Their real logo/truck red (`rgb(191,30,46)`), deepened slightly for AA contrast on paper |
+| **Steel** | `#5B6472` | Muted support — secondary text, borders |
 
-## 3. Type pairing
+Two-accent restraint kept from Master Bin's approach (one warm, one cool would fight the real
+brand mark, which is strictly navy + red + white) — no third accent color introduced.
 
-- **Display:** Baloo 2 (700/800) — rounded, friendly, approachable. Signals "simple and low-stress," not "premium craft."
-- **Body:** Inter — neutral, clean, gets out of the way.
+## 3. Type pairing — deliberately different from Master Bin's Baloo 2/Inter
 
-**Why this pairing:** Jurassic (same batch) needed condensed/industrial energy for a dramatic transformation story. Master Bin needed the opposite — nothing dramatic is happening here, the whole sell is that you'll stop thinking about it. A rounded, friendly display face reads as low-friction rather than as a craft/heritage brand.
+- **Display:** Barlow Condensed (600/700/800) — confident, upright, slightly civic/signage in
+  feel. Reads as established and trustworthy rather than playful-rounded (Master Bin's Baloo 2
+  was chosen for "low-stress," which is wrong here — LONESTAR is bigger, older, and has a fleet
+  truck; the type should read competent, not cute).
+- **Body:** Work Sans (400/500/600/700) — clean and warm without being as neutral-generic as
+  Inter, which several sibling builds already use.
 
-## 4. Signature element: The Checklist Rail
+## 4. Signature element: The Star Rail
 
-Template Zero's Story Pole and Jurassic's Spray Line are both **wrong** for this brand — both imply a single dramatic transformation happening once. Master Bin's story is recurring and routine. The **Checklist Rail** is a fixed left-edge column of checkbox icons, one per section, which fill in with a check mark as you scroll past — literally checking the page off like a recurring to-do list, matching the checklist-style layout used throughout.
+Master Bin's Checklist Rail (a fixed column of squares that fill in as you scroll) is reused
+mechanically but reskinned to the one piece of real brand iconography LONESTAR already owns —
+their logo's five-pointed star. Same fixed left-edge rail, same scroll-linked fill behavior,
+but each cell is star-shaped (CSS `clip-path`) and fills Star Red instead of a plain green
+square. This ties the signature element to the client's *actual* mark instead of a generic
+motif — restrained (one shape, one color, no animation flourish beyond the existing fill).
 
-## 5. Structural choices
+## 5. Structural changes from the Master Bin template
 
-- **Layout style assigned:** checklist/list-style presentation instead of cards, used for both the services section and (via the rail) navigation itself.
-- **No hero photo, on purpose:** stock photography for "trash bin cleaning" is uniformly either grungy/urban or institutional-looking — none of it reads as "clean and pleasant." Per the image-tier rule (mediocre photos shouldn't lead), the hero is typography- and icon-led instead. This is a deliberate style difference from Jurassic (photo-heavy) in the same batch.
-- **Lead section:** "How It Works" (the set-it-and-forget-it mechanism) goes directly under the hero, since the simplicity itself — not any single service line — is what this business leads with, per brief.
-- **Reviews:** stated as plainly and small as it actually is — 4 reviews, no attempt to make it look bigger.
-- **About:** kept deliberately minimal — no owner name was found in research (unlike Jurassic's Jeffrey Williams) and none was invented; copy stays generic ("a small Denton crew") rather than fabricating a personal narrative that isn't there.
-- **Contact:** no phone number is used anywhere on the site — none was verifiable in public research, and inventing one would misrepresent a real business. A contact form covers lead capture instead.
+- **Hero is now photo-led, not typography-only.** Master Bin had no usable photo (mediocre
+  generic stock only) and went type/icon-led as a deliberate workaround. LONESTAR has a strong
+  real asset — their actual branded service truck (`images/truck.png`) — so the hero leads with
+  it. This is the single biggest structural divergence from the source template.
+- **H1 trick (per Owen, same pattern as Brick by Brick):** the real `<h1>` is one tag containing
+  two visually distinct spans — a small, uppercase `.eyebrow` span carrying every SEO-important
+  fact (service + all six service-area cities), and large `.hero-line` spans carrying a short,
+  punchy tagline. Crawlers read the full, keyword-rich `<h1>` text regardless of which part is
+  styled small; visually, the *tagline* is what reads as "the H1" to a human. Real content used:
+  eyebrow = "Trash Bin Cleaning & Pressure Washing in Frisco, McKinney, Plano, Allen, Celina &
+  Prosper, TX"; hero lines = "Your trash cans," / "Texas clean."
+- **New: dedicated Deals section.** Master Bin had no active promo to feature. LONESTAR's real,
+  current 20%-off-first-cleaning + `LONESTAR20` offer gets its own section immediately after
+  the hero, not just a top-bar mention — per Owen's explicit ask to "include their deals."
+- **New: real 3-tier Plans & Pricing section**, replacing Master Bin's generic 4-item services
+  checklist. Exact real pricing (see §6) with the "Regular / every 6 weeks" plan marked Most
+  Popular, matching the client's own site.
+- **New: Before & After section** using LONESTAR's own real photos (`bin-before.jpg` /
+  `bin-after.jpg`) instead of Master Bin's single About-section photo — LONESTAR has genuinely
+  strong proof images Master Bin didn't, so proof gets a full section rather than a small aside.
+- **Trust bar swapped from an unverifiable star rating to verified facts.** Master Bin's hero
+  used "5.0★ rated" (real, small review count). LONESTAR's homepage displays a 5-star graphic,
+  but it's part of their own promo badge artwork, not a review-platform rating — no verified
+  aggregate rating was found (Facebook shows 3 reviews; no public star count confirmed). Used
+  "BBB A+ Rated" and "Est. 2022" instead, both independently verifiable.
+- **Services trimmed to the two real service lines** (bin cleaning; residential pressure
+  washing) instead of a 4-item checklist — LONESTAR only actually offers two distinct service
+  categories, so a padded list would misrepresent scope.
+- **FAQ section added** using condensed, real answers pulled from the client's own `/faqs/`
+  page, with matching `FAQPage` JSON-LD — direct SEO value the Master Bin template didn't need
+  (that build had no FAQ section at all).
 
-## 6. Images
+## 6. Real facts used (verified against lonestarbincleaners.com, 2026-08-05)
 
-Only one supporting photo is used (in the About section) — small and scattered, per the "mediocre/no images" tier. No hero or lead image, unlike Jurassic.
+- **Plans:** Regular (every 6 weeks) $25/visit, 2 bins, $20 first cleaning — Most Popular ·
+  Quarterly (every 12 weeks) $45/visit, $36 first cleaning · One-Time $75/visit, $60 first
+  cleaning. Additional bins +$10 each on every plan. No long-term contracts, cancel anytime,
+  100% satisfaction guaranteed.
+- **Deal:** 20% off first cleaning on any recurring plan sign-up, code `LONESTAR20`.
+- **Services:** Trash bin cleaning (200°F pressure-washed interior, exterior wipe-down,
+  sanitize, disinfect, deodorize) · Residential pressure washing (patios, pergolas, porches,
+  driveways, house exteriors — brick or wood).
+- **Service area:** Frisco, McKinney, Allen, Celina, Plano, Prosper, TX (zip range
+  75009–75070 per client FAQ).
+- **Contact:** 972-777-4243 · info@lonestarbincleaners.com · 6160 Warren Parkway Suite 100,
+  Frisco, TX 75034.
+- **Hours:** Mon–Fri 8am–6pm, Sat 9am–2pm, Sun closed. The client's own site labels these hours
+  "PST," which is very likely a WordPress-plugin default left unconfigured — Frisco, TX is
+  Central time. Corrected silently to plain hours with no timezone claim rather than repeating
+  a probable bug or guessing "CT" wasn't explicitly confirmed anywhere.
+- **Trust signals:** BBB A+ rating (not BBB-accredited), established 2022. Real social profiles
+  exist on Facebook, Instagram, and YouTube (linked in the header, matching the client's own
+  site).
 
-**2026-08-04 update:** replaced the placeholder Unsplash driveway stock photo with a real before/after result photo Owen supplied (`before-after-bin.webp`) — a much stronger fit than generic stock, since it's an actual demonstration of the service outcome rather than an unrelated tidy-driveway shot.
+## 7. Flags for Owen
 
-## 7. Flag for Owen
-
-Could not find a public phone number or named owner for this business in research — only a Facebook business page and third-party directory mentions. Worth confirming direct contact details with the owner before this goes further, since the demo currently has no phone number anywhere.
+- **No owner/founder name found anywhere public** (site, BBB, Facebook, Instagram) — About
+  section stays intentionally generic rather than inventing a name or story. Flag before any
+  personalized copy is added.
+- **No verified aggregate review rating.** The 5-star graphic on the client's homepage is their
+  own promo-badge artwork advertising the discount, not a real review-platform score. Facebook
+  shows 3 reviews; Yelp exists but returned a 403 on fetch (not independently confirmed here).
+  If Owen has the real Google rating from the GBP dashboard, it should replace "BBB A+ Rated"
+  as the hero trust tick — a real star count would out-convert a BBB mention.
+- **Real logo, truck, and before/after photos were pulled directly from the client's own site**
+  (their own IP, used to pitch their own business back to them — standard for this workflow) and
+  saved locally in `images/`. Before shipping this as a live client site (not just a pitch demo),
+  confirm image usage/licensing status with the client rather than assuming indefinite reuse.

@@ -1,4 +1,15 @@
 (function () {
+  // Hero tagline intro — reveals the large .hero-line spans on load. Belt-and-suspenders:
+  // CSS also has a .no-js fallback in case this script fails to run at all.
+  var heroLines = document.querySelectorAll('.hero-line');
+  if (heroLines.length) {
+    requestAnimationFrame(function () {
+      heroLines.forEach(function (el, i) {
+        setTimeout(function () { el.classList.add('intro-in'); }, 120 + i * 140);
+      });
+    });
+  }
+
   var header = document.getElementById('siteHeader');
   var railItems = document.querySelectorAll('.checklist-rail__item');
   var sections = Array.from(railItems).map(function (item) {
