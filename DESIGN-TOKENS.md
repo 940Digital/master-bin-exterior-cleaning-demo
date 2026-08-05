@@ -8,16 +8,18 @@ Master Bin is a brand-new, very small recurring-service business in Denton — t
 
 ## 2. Palette concept
 
-Rejected the literal "trash can" color cliché (browns/dark greens) — that would visually reinforce the exact grime this service removes. Rejected reusing Jurassic's water-blue accent (this batch's other cleaning business) to keep the two visually distinct. Instead grounded the palette in "clean and administrative" — the feeling of a freshly rinsed, sanitized surface and a service you set once and never manage again.
+Rejected the literal "trash can" color cliché (browns/dark greens) — that would visually reinforce the exact grime this service removes. Instead grounded the palette in "clean and administrative" — the feeling of a freshly rinsed, sanitized surface and a service you set once and never manage again.
+
+**2026-08-04 revision:** the original build used a navy/green/coral-orange combo. Owen flagged the orange CTA as no longer appealing, and asked for a palette closer to the business's own real logo (navy + green + orange) — but a *better* execution than a flat navy-and-green, not a literal copy. Dropped orange entirely rather than trying to save it: the real logo's orange is a small icon accent, not something that needs to survive as a full site-wide CTA color. Deepened the navy into a livelier teal-navy, brightened the green so it reads "fresh" instead of muddy-olive, and introduced **Wave** — a confident teal-blue — as the new primary accent, replacing Coral one-for-one in every usage (CTA buttons, hover states, checklist links). Blue + green now do all the accent work between them, tied to the real brand's two most recognizable colors, without the orange that felt dated.
 
 | Name | Hex | Role |
 |---|---|---|
-| **Navy** | `#16242C` | Base dark surface — a calm, trustworthy basin-blue, not black |
+| **Navy** | `#123C48` | Base dark surface — deeper, livelier teal-navy (was flatter charcoal-navy) |
 | **Suds** | `#F2F5F4` | Base light surface — cool, clean white |
 | **Ink** | `#101B21` | Body text on light surfaces |
-| **Fresh** | `#6FA85A` | Primary accent — checkmarks, "done," the feeling of clean |
-| **Coral** | `#E8674A` | Rare accent — reserved for primary CTA buttons only |
-| **Mist** | `#8FA0A6` | Muted support — borders, secondary text |
+| **Fresh** | `#3DAF72` | Secondary accent — checkmarks, "done," the feeling of clean (brighter/cleaner than the original muddy green) |
+| **Wave** | `#1E88A8` | **Primary accent** — CTA buttons, links, hover states. Replaces Coral entirely. |
+| **Mist** | `#8299A1` | Muted support — borders, secondary text |
 
 ## 3. Type pairing
 

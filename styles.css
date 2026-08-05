@@ -1,10 +1,10 @@
 :root {
-  --navy: #16242C;
+  --navy: #123C48;
   --suds: #F2F5F4;
   --ink: #101B21;
-  --fresh: #6FA85A;
-  --coral: #E8674A;
-  --mist: #8FA0A6;
+  --fresh: #3DAF72;
+  --wave: #1E88A8;
+  --mist: #8299A1;
 
   --font-display: 'Baloo 2', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -63,8 +63,8 @@ h2.section-title { font-size: var(--fs-h2); }
   transition: transform .15s ease, background .15s ease;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn--primary { background: var(--coral); color: #fff; }
-.btn--primary:hover { background: #d1583d; }
+.btn--primary { background: var(--wave); color: #fff; }
+.btn--primary:hover { background: #166B87; }
 .btn--ghost { border-color: var(--navy); color: var(--navy); }
 .btn--ghost:hover { border-color: var(--fresh); color: var(--fresh); }
 .btn--dark-ghost { border-color: var(--suds); color: var(--suds); }
@@ -100,7 +100,7 @@ h2.section-title { font-size: var(--fs-h2); }
   font-size: 0.78rem; font-weight: 700; padding: 0.4rem 0.85rem; border-radius: 999px;
   border: 1px solid var(--mist); color: var(--mist); white-space: nowrap;
 }
-.preview-flag:hover { border-color: var(--coral); color: var(--coral); }
+.preview-flag:hover { border-color: var(--wave); color: var(--wave); }
 .main-nav { display: none; gap: 1.8rem; font-weight: 600; font-size: 0.92rem; }
 .main-nav a:hover { color: var(--fresh); }
 .nav-full-site { display: inline-flex; }
@@ -166,7 +166,7 @@ h2.section-title { font-size: var(--fs-h2); }
 .section--dark .checklist-row h3 { color: var(--navy); }
 .checklist-row div h3 { font-size: 1.05rem; margin-bottom: 0.25rem; }
 .checklist-row div p { margin: 0; color: var(--mist); font-size: 0.92rem; }
-.checklist-row a { margin-left: auto; align-self: center; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--coral); white-space: nowrap; }
+.checklist-row a { margin-left: auto; align-self: center; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--wave); white-space: nowrap; }
 
 /* ---------- Reviews ---------- */
 .reviews-strip { max-width: 640px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.2rem; text-align: center; }
